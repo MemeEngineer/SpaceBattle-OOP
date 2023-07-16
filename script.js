@@ -32,9 +32,26 @@ class AlienShip extends Ship{
         this.firepower= firepower;
         this.accuracy=accuracy;
     }
+    attack(ussAssembly){
+        ussAssembly.hull -= this.firepower
+        console.log(ussAssembly.hull)
+
+    }
 }
 
 const Alien1 = new AlienShip (1, 2, .3)
+
 console.log(Alien1)
 
 console.log(ussAssembly.attack(Alien1))
+console.log(Alien1.attack(ussAssembly))
+
+const gameObject= {
+    checkWin(){
+        if(ussAssembly.hull <= 0){
+                console.log("Game Over!")
+        }
+       
+    }
+}
+console.log(gameObject.checkWin())
