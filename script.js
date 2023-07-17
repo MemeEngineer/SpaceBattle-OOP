@@ -22,7 +22,7 @@ class HumanShip extends Ship{
             console.log(`You have hit the alien`)
             Alien.hull -= this.firepower
 
-            Alien.hull <= 0 ? console.log(`Alien ship has been destroyed there are still ${alienDock.length -1} aliens on the dock`) : console.log(`The Alien has ${Alien.hull} hull points remaining there are ${alienDock.length} ships left`)
+            Alien.hull <= 0 ? console.log(`Alien ship has been destroyed there are still ${alienDock.length -1} aliens on the dock`) : console.log(`The Alien has ${Alien.hull} hull points remaining, there are ${alienDock.length} ships left`)
 
             if(Alien.hull <= 0){
                 delAlien()
@@ -94,7 +94,7 @@ const gameObject= {
 const atkbtn = document.querySelector('#atk')
 
 atkbtn.addEventListener('click', function(){
-    console.log(ussAssembly)
+
    ussAssembly.attack(alienDock[0])
    gameObject.checkWin()
    alienDock[0].attack(ussAssembly)
