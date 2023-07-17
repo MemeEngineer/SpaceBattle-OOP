@@ -22,11 +22,10 @@ class HumanShip extends Ship{
             console.log(`You have hit the alien`)
             Alien.hull -= this.firepower
 
-            Alien.hull <= 0 ? console.log(`Alien ship has been destroyed there are still ${alienDock.length -1} aliens on the dock`) : console.log(`The Alien has ${Alien.hull} hull points remaining there are ${alienDock.length}  ships left`)
+            Alien.hull <= 0 ? console.log(`Alien ship has been destroyed there are still ${alienDock.length -1} aliens on the dock`) : console.log(`The Alien has ${Alien.hull} hull points remaining there are ${alienDock.length} ships left`)
 
             if(Alien.hull <= 0){
                 delAlien()
-                console.log(Alien)
                 console.log(alienDock)
             }
         }else{
@@ -35,7 +34,8 @@ class HumanShip extends Ship{
     }
 
     retreat(){
-        console.log(`You have retreated`)
+        console.log(`You have retreated and branded as a coward there were ${alienDock.length} alien ships remaining`)
+
     }
 }
 
@@ -98,7 +98,7 @@ atkbtn.addEventListener('click', function(){
    ussAssembly.attack(alienDock[0])
    gameObject.checkWin()
    alienDock[0].attack(ussAssembly)
-   
+   gameObject.checkWin()
 })
 
 const retreat = document.querySelector('#retreat')
@@ -129,4 +129,10 @@ const start = document.querySelector('#start')
 
 start.addEventListener('click', function(){
     setAlienDock()
+})
+
+const restart = document.querySelector('#restart')
+
+restart.addEventListener('click', function(){
+    window.location.reload()
 })
